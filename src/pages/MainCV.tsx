@@ -9,7 +9,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ComponentProps } from "react";
 import { twJoin } from "tailwind-merge";
-import avatar from "../assets/avatar.jpg";
 import { cvData } from "../cv-data";
 
 const MainCV = () => {
@@ -20,7 +19,11 @@ const MainCV = () => {
       <div className="mx-auto my-4 grid w-[1200px] grid-cols-[2fr_auto_7fr] items-start gap-4 border-2 border-transparent p-4 font-medium">
         <div className="grid gap-4">
           <div className="justify-self-center">
-            <img src={avatar} alt="avatar" className="mx-auto w-40 rounded-full shadow-md" />
+            <img
+              src="./images/avatar.jpg"
+              alt="avatar"
+              className="mx-auto w-40 rounded-full shadow-md"
+            />
           </div>
           <SectionGroup title="Profile">
             <ul className="grid gap-1">

@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 import MainCV from "./pages/MainCV";
 
 const router = createBrowserRouter([
   {
-    index: true,
-    element: <MainCV />,
+    path: import.meta.env.VITE_URL_PREFIX || "",
+    children: [{ index: true, element: <MainCV /> }],
   },
 ]);
 const App = () => {
