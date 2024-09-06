@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  -webkit-print-color-adjust: exact;
+}
+
+body {
+  font-size: 14px;
+  font-family: inherit;
+}
+
+th {
+  text-align: unset;
+}
+
+svg {
+  height: 1em;
+  font-size: 1em;
+}
