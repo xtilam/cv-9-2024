@@ -12,13 +12,15 @@ h6 {
 }
 
 button {
-  @apply btn-primary;
+  @apply btn btn-primary;
 }
 
 a {
   @apply hover-scale font-medium text-cyan-700;
 }
-html, body {
+
+html,
+body {
   background-color: #eee;
 }
 ul {

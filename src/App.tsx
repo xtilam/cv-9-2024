@@ -1,14 +1,20 @@
-import { BrowserRouter, createBrowserRouter, Router, RouterProvider } from "react-router-dom";
+import {
+  HashRouter,
+  Route,
+  Routes
+} from "react-router-dom";
+import { CodePreview } from "./pages/CodePreview";
 import MainCV from "./pages/MainCV";
 
-const router = createBrowserRouter([
-  {
-    path: import.meta.env.VITE_URL_PREFIX || "",
-    children: [{ index: true, element: <MainCV /> }],
-  },
-]);
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" index={true} element={<MainCV />} />
+        <Route path="/code-preview" index={true} element={<CodePreview />} />
+      </Routes>
+    </HashRouter>
+  );
 };
 
 export default App;

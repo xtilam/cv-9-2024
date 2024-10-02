@@ -6,7 +6,7 @@ export class ApplyOther extends BaseApply {
     const { twJoin } = this;
     this.addPlugin(({ addComponents }) => {
       const color = (colorName) =>
-        twJoin(`uppercase font-bold text-xl px-2 text-white bg-${colorName} mt-4`);
+        twJoin(`uppercase font-bold text-lg px-2 text-white bg-${colorName} mt-3`);
 
       Object.values(ApplyColors.colorConfig).forEach(({ colorName, darkerColorName }) => {
         addComponents({

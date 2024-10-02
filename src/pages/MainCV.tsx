@@ -1,7 +1,6 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faArrowRight,
-  faDotCircle,
   faEnvelope,
   faLocationDot,
   faPhone,
@@ -9,14 +8,16 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ComponentProps } from "react";
 import { twJoin } from "tailwind-merge";
+import { TimeLineGroup } from "../components/ui/timeline/TimeLineGroup";
+import { TimeLineItem } from "../components/ui/timeline/TimeLineItem";
 import { cvData } from "../cv-data";
 
 const MainCV = () => {
   const { profile } = cvData;
   const githubLink = `https://github.com/${profile.github}`;
   return (
-    <div className="px-2">
-      <div className="mx-auto my-4 grid w-[1200px] grid-cols-[2fr_auto_7fr] items-start gap-4 border-2 border-transparent p-4 font-medium">
+    <div className="mt-0 px-2">
+      <div className="mx-auto my-0 grid w-[1200px] grid-cols-[2fr_auto_7fr] items-start gap-4 border-2 border-transparent p-2 font-medium">
         <div className="grid gap-4">
           <div className="justify-self-center">
             <img
@@ -25,6 +26,7 @@ const MainCV = () => {
               className="mx-auto w-40 rounded-full shadow-md"
             />
           </div>
+          <div className="pb-2 pt-5 text-left italic">{cvData.careerObjective}</div>
           <SectionGroup title="Profile">
             <ul className="grid gap-1">
               {[
@@ -35,7 +37,7 @@ const MainCV = () => {
               ].map(([icon, jsx], idx) => {
                 return (
                   <li key={idx} className="flex items-end gap-2">
-                    <FontAwesomeIcon icon={icon as any} className="ml-2 text-2xl" />
+                    <FontAwesomeIcon icon={icon as any} className="ml-2 text-xl" />
                     <span className="leading-[1em]">{jsx as any}</span>
                   </li>
                 );
@@ -72,7 +74,7 @@ const MainCV = () => {
         </div>
         <div className="h-full border-l-2 border-success" />
         <div>
-          <div className="col-span-8 mb-4 grid gap-3">
+          <div className="col-span-8 grid gap-3">
             <h1 className="w-fit border-b-4 border-success py-2 text-3xl font-bold">
               {profile.name}
             </h1>
@@ -85,7 +87,7 @@ const MainCV = () => {
                 time={["2/2021", "2/2023"]}
                 desc={
                   <div>
-                    Completed military service <i>(police force)</i>
+                    Complete military service<i>(police force)</i>
                   </div>
                 }
               />
@@ -93,13 +95,13 @@ const MainCV = () => {
                 {[
                   [
                     "Develop",
-                    "Developed tools based on client requirements",
-                    "Developed automation tools for Telegram, Telebot, etc.",
-                    "Created desktop apps using ElectronJS with front-end built in SolidJS, ReactJS, etc.",
-                    "Built web server APIs to support automation tasks",
-                    "Wrote web automation scripts: web requests, blocking, modifying, injecting JS code",
-                    "Occasionally worked on tools related to game automation, memory, and CE tools",
-                    "Created NPM scripts for building end products",
+                    "Develop tools based on customer requirements",
+                    "Develop automation tools for Telegram, Telebot, etc",
+                    "Create desktop applications using ElectronJS",
+                    "Build web server APIs to support automation tasks",
+                    "Write web automation scripts: web requests, interceptors, modifiers, JS injections",
+                    "Occasionally work on tools related to game automation, memory",
+                    "Create NPM scripts to build end products",
                   ],
                   [
                     "Technologies",
@@ -132,7 +134,7 @@ const MainCV = () => {
                     "ReactJS (Basic to advanced)",
                     "NodeJS (Basic to advanced - ongoing)",
                   ],
-                  ["Status", "Uncompleted (Expected completion in 10/2023)"],
+                  ["Status", "Uncompleted (Expected completion in 11/2023)"],
                 ]}
               </TimeLineItem>
             </TimeLineGroup>
@@ -144,8 +146,8 @@ const MainCV = () => {
                 {[
                   [
                     "Develop",
-                    "Developed a DLL to enable interaction between AutoIT and QML",
-                    "Created an API for QML JavaScript to call AutoIT functions",
+                    "Develop DLL to enable interaction between AutoIT and QML",
+                    "Write API for QML JavaScript to call AutoIT functions",
                   ],
                   ["Status", "In development - Working well"],
                   ["Link", <LinkWithHref href="https://github.com/xtilam/qml-autoit" />],
@@ -154,51 +156,43 @@ const MainCV = () => {
               </TimeLineItem>
               <TimeLineItem
                 time={["2022", "2024"]}
-                desc="Developed automation tool for Cocos2D and ReactJS"
+                desc="Write automation code for Cocos2D and ReactJS"
               >
                 {[
                   [
                     "Develop",
-                    "Injected JS into the app frontend after page load (for automation)",
+                    "Inject JS into application interface after page load",
                     "Get component states, navigate, detect render, inject hooks (React)",
-                    "Used Babel for code parsing",
-                    "Replaced XMLHttpRequest and WebSocket (Insert web proxy)",
-                    "Blocked unnecessary asset loading to boost performance",
-                    "Built a management interface to automate multiple accounts simultaneously",
+                    "Using Babel library to parse code",
+                    "Replace XMLHttpRequest and WebSocket (to insert web proxy)",
+                    "Block loading of unnecessary assets to increase performance",
+                    "Create application interface, manage multiple accounts running at the same time",
                   ],
                 ]}
               </TimeLineItem>
-              <TimeLineItem
-                time={["2022", "2024"]}
-                desc="Developed web APIs for client's existing automation tools"
-              >
+              <TimeLineItem time={["2022", "2024"]} desc="Develop Web API for client">
                 {[
                   [
                     "Develop",
-                    "Developed web APIs for client's existing automation tools",
-                    "Analyzed and modified the client's automation tool source code (replaced if necessary)",
-                    "Executed and analyzed CLI results (if necessary)",
-                    "Developed a management interface for the client (if necessary)",
-                    "Created RESTful APIs and provided documentation upon completion",
+                    "Develop Web API for existing customer automation tools",
+                    "Analyze and modify customer automation tool source code (replace if needed)",
+                    "Execute and analyze CLI results",
+                    "Create application interface for customer management",
+                    "Create RESTful API and documentation",
                   ],
                   ["Technologies", "NodeJS, Webpack, ExpressJS, MySQL, SQLite, MongoDB, etc."],
                 ]}
               </TimeLineItem>
-              <TimeLineItem time={["2024"]} desc="Developed Telebot and TeleAPI for clients">
+              <TimeLineItem time={["2024"]} desc="Develop Telebot and TeleAPI">
                 {[
                   [
                     "Develop",
-                    "Built a Telebot server",
-                    "Created a tool for managing large-scale Telegram account updates",
-                    "write tool related to auto telegram account update",
+                    "Building Telebot Server",
+                    "Writing Tools Related to Automatic Telegram Account update",
                   ],
                   ["Technologies", "NodeJS, Webpack, Python, WebSocket, C++, SQLite, etc."],
                 ]}
               </TimeLineItem>
-              <TimeLineItem
-                time={["Some other interesting stuff"]}
-                desc={<LinkWithHref />}
-              ></TimeLineItem>
             </TimeLineGroup>
           </div>
         </div>
@@ -233,60 +227,7 @@ const LinkWithHref = ({ href, ...otherProps }: ComponentProps<"a">) => (
     {href}
   </a>
 );
-const TimeLineItem = ({
-  desc,
-  time: [startTime, endTime],
-  children,
-}: {
-  desc: any;
-  time: [startTime: string, endTime?: string];
-  children?: [title: any, ...content: any][];
-}) => {
-  const getTimeLineChild = (content: any[]) => {
-    if (!content?.length) return {};
-    if (content.length === 1) return { inline: content[0] };
-    return {
-      list: (
-        <div className="ml-5 grid grid-cols-[auto_1fr] gap-x-2">
-          {content.map(
-            (v) =>
-              v && (
-                <>
-                  <FontAwesomeIcon icon={faArrowRight} className="mt-1 text-danger-dark" />
-                  <div>{v}</div>
-                </>
-              ),
-          )}
-        </div>
-      ),
-    };
-  };
-  return (
-    <div>
-      <div className="flex items-start gap-2">
-        <div className="whitespace-nowrap font-bold text-danger-dark">
-          <FontAwesomeIcon icon={faDotCircle} className="mr-1 text-danger-dark" />
-          {startTime}
-          {endTime ? `- ${endTime}` : ""}:
-        </div>
-        <div className="font-bold">{desc}</div>
-      </div>
-      {children?.map(([title, ...content]) => {
-        const { list, inline } = getTimeLineChild(content);
-        return (
-          <div className={twJoin("ml-5", inline && "grid grid-cols-[auto_1fr] gap-2")}>
-            <div className="font-bold underline">{title}:</div>
-            {inline}
-            {list}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-const TimeLineGroup = (props: ComponentProps<"div">) => {
-  return <div {...props} className={twJoin(props.className, "grid gap-2")} />;
-};
+
 const SectionGroup = ({
   title,
   className,
